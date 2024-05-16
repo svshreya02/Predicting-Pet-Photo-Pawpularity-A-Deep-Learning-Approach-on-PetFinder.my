@@ -36,17 +36,17 @@ class PawpularityModel(nn.Module):
         self.dropout = nn.Dropout(p=0.3)
 
     def forward(self, images, meta):
-        features = self.model(images)                 # Extract features
+        features = self.model(images)                 
         features = self.dropout(features)
-        features = torch.cat([features, meta], dim=1) # Concatenate metadata
-        output = self.fc(features)                    # Predict Pawpularity
+        features = torch.cat([features, meta], dim=1) 
+        output = self.fc(features)                    
         return output
 
 
 
-# Load the model
+# Load the model from the trained code
 model = PawpularityModel(CONFIG['model_name'])
-model.load_state_dict(torch.load('model_new.pth', map_location=CONFIG['device']))
+model.load_state_dict(torch.load('model_new.pth', map_location=CONFIG['device'])) #change model name if needed
 model.to(CONFIG['device'])
 model.eval()
 
@@ -59,7 +59,7 @@ transform = transforms.Compose([
 
 
 st.title("Pawpularity Score Prediction 🐾")
-st.write("Project by Shreya Sivakumar-20BCE1794")
+st.write("Project by Shreya Sivakumar")
 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 if uploaded_file is not None:
@@ -75,7 +75,7 @@ if uploaded_file is not None:
         output = model(image, meta)
         pawpularity_score = output.item()
 
-    st.markdown(f"<h2 style='text-align: center; color: black;'>🐾 Pawpularity Score: {pawpularity_score}</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h2 style='text-align: center; color: black;'>🐾 Picture Pawpularity Score: {pawpularity_score}</h1>", unsafe_allow_html=True)
     st.markdown("""
     ---
     Copyright © 2024 Shreya Sivakumar. All rights reserved.
