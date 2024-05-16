@@ -66,7 +66,7 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file).convert('RGB')
     st.image(image, caption='Uploaded Image', use_column_width=True)
     
-    # Preprocess the image and prepare dummy metadata (replace with actual metadata handling)
+    # replace with actual metadata handling
     image = transform(image).unsqueeze(0).to(CONFIG['device'])
     meta = torch.zeros((1, 12)).to(CONFIG['device'])  
 
