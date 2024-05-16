@@ -13,37 +13,37 @@ app.py: Streamlit script for deploying the trained model.
 ```python
 git clone https://github.com/svshreya02/Predicting-Pet-Photo-Pawpularity-A-Deep-Learning-Approach-on-PetFinder.my.git
 ```
+```python
 cd Predicting-Pet-Photo-Pawpularity-A-Deep-Learning-Approach-on-PetFinder.my
-Set up a virtual environment and install dependencies:
+```
 
-sh
-Copy code
+Set up a virtual environment and install dependencies:
+```python
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
-Usage
-Data Analysis:
+```
+ 
+## Usage
+- Data Analysis:
 Open Data Visualisation and Analysis of dataset.ipynb in Jupyter Notebook to explore and visualize the dataset.
 
-Model Training:
+- Model Training:
 Open pytorch-paw-model_train.ipynb in Jupyter Notebook to train the deep learning model. The notebook includes data preprocessing, model architecture, training, and evaluation steps.
 
-Model Deployment:
+- Model Deployment:
 Run app.py using Streamlit to deploy the trained model with an interactive interface. Ensure you have the necessary dependencies installed and configured:
-
-sh
-Copy code
+```python
 streamlit run app.py
-Contributing
+```
+
+## Contributing
 Contributions are welcome! Please follow these steps:
+- Fork the repository.
+- Create a new branch (git checkout -b feature-branch).
+- Commit your changes (git commit -m 'Add new feature').
+- Push to the branch (git push origin feature-branch).
+- Open a pull request.
 
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Commit your changes (git commit -m 'Add new feature').
-Push to the branch (git push origin feature-branch).
-Open a pull request.
-License
+## License
 This project is licensed under the Apache-2.0 License. See the LICENSE file for details.
-
-Contact
-For any questions or issues, please contact svshreya02.
